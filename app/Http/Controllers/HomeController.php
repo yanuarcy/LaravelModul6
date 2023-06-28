@@ -6,10 +6,21 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-   function index()
-   {
-    $pageTitle = 'Home';
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
 
-    return view('home',['pageTitle' => $pageTitle]);
-   }
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        $pageTitle = 'Home Page';
+
+        return view('home', compact('pageTitle'));
+    }
 }
